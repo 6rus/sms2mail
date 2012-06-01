@@ -13,38 +13,38 @@ a) Download the application frpm the Google Store
 The default e-mail is the one associated with the phone
 
 b) send a message from another phone using the following syntax:
-<pre><code>sms2mail config ********</pre></code>
-where ******** is replaced by the password of gmail account.
-Remember to delete the message on the phone of your friend :)
+	sms2mail config ********
+	where ******** is replaced by the password of gmail account.
+	Remember to delete the message on the phone of your friend :)
 
 
 Number 2: I forgot my phone at home and the application is already installed but not configured
 
 Send a message from another phone using the following syntax:
-sms2mail config ********
-where ******** is replaced by the password of gmail account.
-Remember to delete the message on the phone of your friend :)
+	sms2mail config ********
+	where ******** is replaced by the password of gmail account.
+	Remember to delete the message on the phone of your friend :)
 
 Number 3: I forgot my phone at home and the application is already installed and configured
 
 Send a message from another phone using the following syntax:
-sms2mail on
+	sms2mail on
 
 
 List of remote commands via SMS
 --------------------------------------
 
 a) Account setup:
-SMS2Mail config *********
-where ******** is replaced by the password of gmail account.
-Remember to delete the message on your friend's phone :)
+	sms2mail config *********
+	where ******** is replaced by the password of gmail account.
+	Remember to delete the message on your friend's phone :)
 
 
 b) Service Activation
-sms2mail on
+	sms2mail on
 
 c) Disabling the service
-sms2mail off
+	sms2mail off
 
 
 
@@ -66,39 +66,39 @@ a) Télécharger l'application sur le Store google (installation à distance)
 L'adresse mail par défaut est celle associé au téléphone
 
 b) S'envoyer un message depuis un autre téléphone avec la syntaxe suivante : 
-   sms2mail config ********
-   ou ******** est remplacé par le mot de passe du compte gmail.
-   Bien penser à supprimer le message sur le téléphone de son ami :)
+	sms2mail config ********
+	ou ******** est remplacé par le mot de passe du compte gmail.
+	Bien penser à supprimer le message sur le téléphone de son ami :)
 
 
 numero 2 : J'ai oublié mon téléphone chez moi et l'application est déjà installée mais non configurée
 
 S'envoyer un message depuis un autre téléphone avec la syntaxe suivante :
-   sms2mail config ********
-   ou ******** est remplacé par le mot de passe du compte gmail.
-   Bien penser à supprimer le message sur le téléphone de son ami :)
+	sms2mail config ********
+	ou ******** est remplacé par le mot de passe du compte gmail.
+	Bien penser à supprimer le message sur le téléphone de son ami :)
 
 
 numero 3 : J'ai oublié mon téléphone chez moi et l'application est déjà installée et configurée
 
 S'envoyer un message depuis un autre téléphone avec la syntaxe suivante :
-   sms2mail on 
+	sms2mail on 
 
 
 Liste des commandes à distance via sms
 --------------------------------------
 
 a) Configuration du compte : 
-   sms2mail config ********* 
-   ou ******** est remplacé par le mot de passe du compte gmail.
-   Bien penser à supprimer le message sur le téléphone de son ami :)
+	sms2mail config ********* 
+	ou ******** est remplacé par le mot de passe du compte gmail.
+	Bien penser à supprimer le message sur le téléphone de son ami :)
 
 
 b) Activation du service
-  sms2mail on
+	sms2mail on
 
 c) Désactivation du service 
-  sms2mail off
+	sms2mail off
 
 
 
