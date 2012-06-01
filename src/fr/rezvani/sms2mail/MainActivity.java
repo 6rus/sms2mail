@@ -1,6 +1,7 @@
 package fr.rezvani.sms2mail;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,8 @@ public class MainActivity extends Activity {
 	Context mContext = this;
 	EditText mEditTextMail = null;
 	EditText mEditTextPass = null;
+	private ProgressDialog mProgressDialog;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,48 +72,72 @@ public class MainActivity extends Activity {
         }
         
         
+       
+        
         
         mStartButton.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
 				
-				
-				String mail = mEditTextMail.getText().toString();
-				String password = mEditTextPass.getText().toString();
-				
-				//TODO regex mail 
-				if (!mail.contains("@")) {
-					Toast.makeText(mContext, Utils.APP_NAME + " :Invalid mail ",Toast.LENGTH_LONG).show();
-
-				} else if("".equals(password)){	
-					Toast.makeText(mContext, Utils.APP_NAME + " :Empty password",Toast.LENGTH_LONG).show();
-				} else {
-
-					SharedPreferences settings = getSharedPreferences(
-							Utils.APP_NAME, Context.MODE_PRIVATE);
-					Boolean serviceStarted = settings.getBoolean(
-							Utils.PREFS_SERVICE_STATUS, false);
-					Editor editor = settings.edit();
-					editor.putBoolean(Utils.PREFS_SERVICE_STATUS,
-							!serviceStarted);
-					
-					editor.putString(Utils.PREFS_USER_MAIL, mail);
-					editor.putString(Utils.PREFS_USER_PWD, password);
-					
-					
-					editor.commit();
-					if(!serviceStarted) {
-						mStartButton.setText(getResources().getString(R.string.stop));
-						Utils.activationMail(mContext);
-					} else {
-						mStartButton.setText(getResources().getString(R.string.start));
-						Utils.desactivationMail(mContext);
-					}
-					
-
-				
-				}
+				 mProgressDialog = ProgressDialog.show(MainActivity.this,
+			                "", "Please wait...", true);   
+			       
 				 
+				new Thread() {
+					@Override
+					public void run() {
+						String mail = mEditTextMail.getText().toString();
+						String password = mEditTextPass.getText().toString();
+
+						// TODO regex mail
+						if (!mail.contains("@")) {
+							Toast.makeText(mContext,
+									Utils.APP_NAME + " :Invalid mail ",
+									Toast.LENGTH_LONG).show();
+
+						} else if ("".equals(password)) {
+							Toast.makeText(mContext,
+									Utils.APP_NAME + " :Empty password",
+									Toast.LENGTH_LONG).show();
+						} else {
+
+							SharedPreferences settings = getSharedPreferences(
+									Utils.APP_NAME, Context.MODE_PRIVATE);
+							Boolean serviceStarted = settings.getBoolean(
+									Utils.PREFS_SERVICE_STATUS, false);
+							Editor editor = settings.edit();
+							editor.putBoolean(Utils.PREFS_SERVICE_STATUS,
+									!serviceStarted);
+
+							editor.putString(Utils.PREFS_USER_MAIL, mail);
+							editor.putString(Utils.PREFS_USER_PWD, password);
+
+							editor.commit();
+							if (!serviceStarted) {
+								Utils.activationMail(mContext);
+							} else {
+								Utils.desactivationMail(mContext);
+							}
+
+						}
+						 mProgressDialog.dismiss();
+					}
+				}.start();
+				
+				
+				SharedPreferences settings = getSharedPreferences(
+						Utils.APP_NAME, Context.MODE_PRIVATE);
+				Boolean serviceStarted = settings.getBoolean(
+						Utils.PREFS_SERVICE_STATUS, false);
+				if (!serviceStarted) {
+					mStartButton.setText(getResources().getString(
+							R.string.stop));
+				} else {
+					mStartButton.setText(getResources().getString(
+							R.string.start));
+				}
+
+				
 			}
        });
         
