@@ -8,7 +8,7 @@ Scenarios
 
 ###Number 1: I forgot my phone at home but the application is not installed
 
-a) Download the application frpm the Google Store
+a) Download the application from the Google Store
 
 The default e-mail is the one associated with the phone
 
@@ -41,11 +41,10 @@ List of remote commands via SMS
 
 
 ###b) Service Activation   
-	<pre><code>sms2mail on</pre></code>
+<pre><code>sms2mail on</pre></code>
 
 ###c) Disabling the service   
-	<pre><code>sms2mail off</pre></code>
-
+<pre><code>sms2mail off</pre></code>
 
 
 
@@ -95,10 +94,10 @@ Liste des commandes à distance via sms
 
 
 ###b) Activation du service   
-	<pre><code>sms2mail on</pre></code>   
+<pre><code>sms2mail on</pre></code>   
 
 ###c) Désactivation du service   
-	<pre><code>sms2mail off</pre></code>   
+<pre><code>sms2mail off</pre></code>   
 
 
 
