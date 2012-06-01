@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Welcome to sms2mail app</string>
+    
     <string name="app_name">sms2mail</string>
     <string name="mail_hint">Enter your mail here</string>
     <string name="password_hint">Enter your password here</string>
