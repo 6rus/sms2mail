@@ -80,8 +80,8 @@ public class SMSReceiver extends BroadcastReceiver {
 								context, phoneNumber);
 						String from =  '"'+contact.trim() +'"'+" <" + phoneNumber + ">" ;
 
-						Toast.makeText(context, Utils.APP_NAME + " :Message : " + messageBody,
-								Toast.LENGTH_LONG).show();
+//						Toast.makeText(context, Utils.APP_NAME + " :Message : " + messageBody,
+//								Toast.LENGTH_LONG).show();
 
 						Utils.sendMail(context, from, messageBody);
 
