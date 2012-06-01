@@ -66,8 +66,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start" />
-    </LinearLayout>
+ 
+	<TextView  
+          android:id="@+id/link"  
+          android:layout_width="wrap_content"  
+          android:layout_height="fill_parent"  
+          android:autoLink="all"  
+          android:linksClickable="true"  
+          android:textColor="#ef931c"
+           android:gravity="bottom"
+          android:text="@string/link_github_lib" />  
+   
+   
+   </LinearLayout>
     
-	
-	
 </LinearLayout>

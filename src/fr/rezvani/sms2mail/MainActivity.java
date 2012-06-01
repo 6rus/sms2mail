@@ -2,12 +2,15 @@ package fr.rezvani.sms2mail;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -21,6 +24,19 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        /**  handle url */
+        TextView tv = ( TextView ) findViewById( R.id.link );  
+        tv.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri
+						.parse(getResources().getString(R.string.link_github_href)));
+				startActivity(browserIntent);
+
+				
+			}
+		});
         
         mStartButton = (Button) findViewById(R.id.start_button);        
         mEditTextMail = (EditText) findViewById(R.id.user_mail);
