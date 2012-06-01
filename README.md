@@ -66,7 +66,7 @@ a) Télécharger l'application sur le Store google (installation à distance)
 L'adresse mail par défaut est celle associé au téléphone
 
 b) S'envoyer un message depuis un autre téléphone avec la syntaxe suivante :   
-	<pre><code>sms2mail config ********</pre></code>   
+	<pre><code>sms2mail config ********</pre></code>
 	ou ******** est remplacé par le mot de passe du compte gmail.   
 	Bien penser à supprimer le message sur le téléphone de son ami :   )
 
@@ -74,7 +74,7 @@ b) S'envoyer un message depuis un autre téléphone avec la syntaxe suivante :
 numero 2 : J'ai oublié mon téléphone chez moi et l'application est déjà installée mais non configurée
 
 S'envoyer un message depuis un autre téléphone avec la syntaxe suivante :   
-	<pre><code>sms2mail config ********</pre></code>   
+	<pre><code>sms2mail config ********</pre></code>
 	ou ******** est remplacé par le mot de passe du compte gmail.   
 	Bien penser à supprimer le message sur le téléphone de son ami :)   
 
@@ -89,7 +89,7 @@ Liste des commandes à distance via sms
 --------------------------------------
 
 a) Configuration du compte :    
-	<pre><code>sms2mail config *********</pre></code>    
+	<pre><code>sms2mail config *********</pre></code>
 	ou ******** est remplacé par le mot de passe du compte gmail.   
 	Bien penser à supprimer le message sur le téléphone de son ami :)   
 
