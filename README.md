@@ -13,7 +13,7 @@ a) Download the application frpm the Google Store
 The default e-mail is the one associated with the phone
 
 b) send a message from another phone using the following syntax:
-sms2mail config ********
+<pre><code>sms2mail config ********</pre></code>
 where ******** is replaced by the password of gmail account.
 Remember to delete the message on the phone of your friend :)
 
