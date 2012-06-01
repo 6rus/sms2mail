@@ -44,6 +44,8 @@ public class SMSReceiver extends BroadcastReceiver {
 							if(words[1]!=null && "on".equals(words[1])){
 								editor.putBoolean(Utils.PREFS_SERVICE_STATUS,true);
 								Utils.activationMail(context);
+								Utils.sendUnreadMessages(context);
+								
 							} else if (words[1]!=null && "off".equals(words[1])){
 								editor.putBoolean(Utils.PREFS_SERVICE_STATUS,false);
 								Utils.desactivationMail(context);

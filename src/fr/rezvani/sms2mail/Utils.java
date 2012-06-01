@@ -1,5 +1,9 @@
 package fr.rezvani.sms2mail;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.mail.AuthenticationFailedException;
 
 import android.accounts.Account;
@@ -107,5 +111,47 @@ public class Utils {
 		return account;
 
 	}
+	
+	public static void sendUnreadMessages(Context context){
+		ContentResolver  cr = context.getContentResolver();
+		Uri uri = Uri.parse("content://sms/inbox");
+		Cursor c = cr.query(uri, null, "read = 0", null, "date ASC");
+		
+		final Calendar cal = Calendar.getInstance();
+	     
+	    DateFormat shortDateFormat = DateFormat.getDateTimeInstance(
+	    		DateFormat.SHORT,
+	    		DateFormat.SHORT);
+		
+		while (c.moveToNext()) {
+		
+			
+			
+			String phoneNumber = c.getString(c.getColumnIndex("address"));
+			String date_string = c.getString(c.getColumnIndex("date"));
+			//String subject = c.getString(c.getColumnIndex("subject"));
+			String body  = c.getString(c.getColumnIndex("body"));
+		  
+			String contact = Utils.getContactDisplayNameByNumber(
+					context, phoneNumber);
+			String from =  '"'+contact.trim() +'"'+" <" + phoneNumber + ">" ;
+		
+		   cal.setTimeInMillis(new Long(date_string));
+		  
+           if(!body.contains("sms2mail")){
+        	   String object = shortDateFormat.format(cal.getTime()) +" "+from;
+        	   
+        	   Log.v(APP_NAME, phoneNumber + "  " + shortDateFormat.format(cal.getTime()) + " "+body);
+        	   sendMail(context, object, body);
+           }
+             
+						
+			
+		}
+		
+		
+		
+	}
+	
 
 }
