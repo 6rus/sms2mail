@@ -35,7 +35,7 @@ List of remote commands via SMS
 --------------------------------------
 
 ###a) Account setup:   
-	<pre><code>sms2mail config *********</pre></code>   
+<pre><code>sms2mail config *********</pre></code>   
 	where ******** is replaced by the password of gmail account.   
 	Remember to delete the message on your friend's phone :)   
 
@@ -89,7 +89,7 @@ Liste des commandes à distance via sms
 --------------------------------------
 
 ###a) Configuration du compte :    
-	<pre><code>sms2mail config *********</pre></code>
+<pre><code>sms2mail config *********</pre></code>
 	ou ******** est remplacé par le mot de passe du compte gmail.   
 	Bien penser à supprimer le message sur le téléphone de son ami :)   
 
