@@ -30,11 +30,14 @@ public class SMSReceiver extends BroadcastReceiver {
 				Object[] pdus = (Object[]) bundle.get("pdus");
 
 				final SmsMessage[] messages = new SmsMessage[pdus.length];
+				
+				String messageBody = "";
 				for (int i = 0; i < pdus.length; i++) {
 					messages[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
+					messageBody+=messages[i].getDisplayMessageBody();
 				}
 				if (messages.length > -1) {
-					final String messageBody = messages[0].getMessageBody();
+					//final String messageBody = messages[0].getMessageBody();
 					
 					
 					
